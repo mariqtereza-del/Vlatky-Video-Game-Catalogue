@@ -16,7 +16,7 @@
         }
     
         .controller-background {
-            background-image: url('images/Other elements/Controllerbackground.png');
+            background-image: url('../images/Other elements/Controllerbackground.png');
             background-repeat: no-repeat;
             background-position: center center;
             background-size: 25% auto;
@@ -112,29 +112,16 @@
 
 
         /* Enhanced favorite star with neon glow */
-        .game-card.favorite::before {
-            content: "★";
-            position: absolute;
-            top: 8px;
-            left: 8px;
-            color: #FFD700;
-            font-size: 1.5rem;
-            text-shadow: 
-                0 0 10px #FFD700,
-                0 0 20px #FFD700,
-                0 0 30px #FFD700;
-            z-index: 6;
-            filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.8));
-        }
+        
 
         /* Enhanced co-op badge with neon effect */
         .game-card .coop-badge {
             position: absolute;
-            top: calc(8px + 1.4rem + 12px);
+            top: calc(17px + 1.5rem + 5px); /* Positioned below the favorite star */
             left: 7px;
             width: 22px;
             height: 22px;
-            background-image: url('images/Icons/coop.png');
+            background-image: url('../images/Icons/coop.png');
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
@@ -868,15 +855,15 @@
     background-position: center;
 }
 
-.ownership-tag.physical::before { background-image: url('images/Icons/physical.png'); }
-.ownership-tag.steam::before { background-image: url('images/Icons/steam.png'); }
-.ownership-tag.psn::before { background-image: url('images/Icons/psn.png'); }
-.ownership-tag.epic::before { background-image: url('images/Icons/epic.png'); }
-.ownership-tag.gog::before { background-image: url('images/Icons/gog.png'); }
-.ownership-tag.origin::before { background-image: url('images/Icons/origin.png'); }
-.ownership-tag.ea::before { background-image: url('images/Icons/ea.png'); }
-.ownership-tag.battlenet::before { background-image: url('images/Icons/battlenet.png'); }
-.ownership-tag.ubisoft::before { background-image: url('images/Icons/ubisoft.png'); }
+.ownership-tag.physical::before { background-image: url('../images/Icons/physical.png'); }
+.ownership-tag.steam::before { background-image: url('../images/Icons/steam.png'); }
+.ownership-tag.psn::before { background-image: url('../images/Icons/psn.png'); }
+.ownership-tag.epic::before { background-image: url('../images/Icons/epic.png'); }
+.ownership-tag.gog::before { background-image: url('../images/Icons/gog.png'); }
+.ownership-tag.origin::before { background-image: url('../images/Icons/origin.png'); }
+.ownership-tag.ea::before { background-image: url('../images/Icons/ea.png'); }
+.ownership-tag.battlenet::before { background-image: url('../images/Icons/battlenet.png'); }
+.ownership-tag.ubisoft::before { background-image: url('../images/Icons/ubisoft.png'); }
 
 
 /* Platform ownership icons with images */
@@ -908,16 +895,16 @@
         }       
 
 /* Platform-specific image backgrounds */
-.platform-icon.physical { background-image: url('images/Icons/physical.png'); }
-.platform-icon.cartridge { background-image: url('images/Icons/cartridge.png'); }
-.platform-icon.cd { background-image: url('images/Icons/cd.png'); }
-.platform-icon.steam { background-image: url('images/Icons/steam.png'); }
-.platform-icon.psn { background-image: url('images/Icons/psn.png'); }
-.platform-icon.epic { background-image: url('images/Icons/epic.png'); }
-.platform-icon.gog { background-image: url('images/Icons/gog.png'); }
-.platform-icon.ea { background-image: url('images/Icons/ea.png'); }
-.platform-icon.battlenet { background-image: url('images/Icons/battlenet.png'); }
-.platform-icon.ubisoft { background-image: url('images/Icons/ubisoft.png'); }
+.platform-icon.physical { background-image: url('../images/Icons/physical.png'); }
+.platform-icon.cartridge { background-image: url('../images/Icons/cartridge.png'); }
+.platform-icon.cd { background-image: url('../images/Icons/cd.png'); }
+.platform-icon.steam { background-image: url('../images/Icons/steam.png'); }
+.platform-icon.psn { background-image: url('../images/Icons/psn.png'); }
+.platform-icon.epic { background-image: url('../images/Icons/epic.png'); }
+.platform-icon.gog { background-image: url('../images/Icons/gog.png'); }
+.platform-icon.ea { background-image: url('../images/Icons/ea.png'); }
+.platform-icon.battlenet { background-image: url('../images/Icons/battlenet.png'); }
+.platform-icon.ubisoft { background-image: url('../images/Icons/ubisoft.png'); }
 
 /* Tooltip for platform icons */
 .platform-icon::after {
@@ -1286,6 +1273,9 @@
 
 .game-card:hover .coop-badge {
     opacity: 1;
+    filter: 
+        drop-shadow(0 0 2px rgba(0, 0, 0, 0.5))
+        drop-shadow(0 0 8px rgba(0, 255, 255, 0.5));
 }
 
 /* DLC specific styling */

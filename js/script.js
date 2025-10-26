@@ -1,3 +1,4 @@
+
 // Define games array in the global scope
 const games = [
     {
@@ -10904,6 +10905,8 @@ function displayGames() {
     const gamesContainer = document.getElementById('gamesContainer');
     gamesContainer.innerHTML = '';
     
+    console.log('Total games to display:', games.length); // Debug
+        
     games.forEach((game, index) => {
         // Calculate missing fields
         const missingFields = calculateMissingFields(game);
@@ -11276,7 +11279,7 @@ const categories = {
             'Nintendo DS': { image: 'images/Console Pictures/ds.png', count: 0 },
             'Browser': { image: 'images/Console Pictures/browser.png', count: 0 },
             'PlayStation Portable': { image: 'images/Console Pictures/psp.png', count: 0 },
-            'PC': { image: 'images/Console Pictures/pc.png', count: 0 },
+            'PC': { image: 'images/Console Pictures/PC.png', count: 0 },
             'Xbox One': { image: 'images/Console Pictures/xbone.png', count: 0 },
             'PlayStation 3': { image: 'images/Console Pictures/ps3.png', count: 0 },
             'PlayStation 4': { image: 'images/Console Pictures/ps4.png', count: 0 },
@@ -11701,7 +11704,7 @@ function debugOwnershipCounts() {
 }
 
 function displayFranchises() {
-    const franchiseSection = document.querySelector('#franchiseCategory .franchise-items');
+    const franchiseSection = document.querySelector('#franchiseCategory .category-items');
     franchiseSection.innerHTML = '';
     
     Object.entries(categories.franchise.items).forEach(([franchiseName, franchiseData]) => {
@@ -11792,7 +11795,7 @@ function displayRatings() {
     });
 }
 function displayOwnership() {
-    const ownershipSection = document.querySelector('#ownershipCategory .franchise-items');
+    const ownershipSection = document.querySelector('#ownershipCategory .category-items');
     if (!ownershipSection) return;
     
     ownershipSection.innerHTML = '';
@@ -12008,7 +12011,7 @@ function displayCategories() {
     updateCategoryCounts();
     
     // Display consoles category
-    const consolesSection = document.querySelector('#consolesCategory .franchise-items');
+    const consolesSection = document.querySelector('#consolesCategory .category-items');
     if (consolesSection) {
         consolesSection.innerHTML = '';
 
@@ -12086,7 +12089,7 @@ function displayCategories() {
     }
 
     // Display years category
-    const yearsSection = document.querySelector('#yearsCategory .years-items');
+    const yearsSection = document.querySelector('#yearsCategory .category-items');
     if (yearsSection) {
         yearsSection.innerHTML = '';
         Object.entries(categories.years.items).forEach(([year, yearData]) => {
@@ -12128,7 +12131,7 @@ function displayCategories() {
         });
 		
 // DISPLAY GENRE CATEGORY - SORTED BY COUNT
-const genreSection = document.querySelector('#genreCategory .genres-items');
+const genreSection = document.querySelector('#genreCategory .category-items');
 genreSection.innerHTML = '';
 
 // Convert to array, sort by count (descending), then display
@@ -12672,3 +12675,28 @@ function setupSearch() {
         });
     }
 }
+        // Add EMU badge if game is emulated
+        if (game.emulated === true || game.emulated === 'true') {
+            console.log('Adding EMU badge for:', game.title); // Debug
+            const emuBadge = document.createElement('div');
+            emuBadge.className = 'emu-badge';
+            emuBadge.textContent = 'EMU';
+            gameCard.appendChild(emuBadge);
+        }
+
+        // Add warning badge if game was beaten with assistance
+        if (game.assisted === true || game.assisted === 'true') {
+            console.log('Adding warning badge for:', game.title); // Debug
+            const warningBadge = document.createElement('div');
+            warningBadge.className = 'warning-badge';
+            warningBadge.textContent = 'CHEAT';
+            gameCard.appendChild(warningBadge);
+        }
+
+        // Add co-op badge if game was played in co-op
+        if (game.notes && game.notes.includes('Co-op')) {
+            console.log('Adding co-op badge for:', game.title); // Debug
+            const coopBadge = document.createElement('div');
+            coopBadge.className = 'coop-badge';
+            gameCard.appendChild(coopBadge);
+        }
