@@ -12675,28 +12675,3 @@ function setupSearch() {
         });
     }
 }
-        // Add EMU badge if game is emulated
-        if (game.emulated === true || game.emulated === 'true') {
-            console.log('Adding EMU badge for:', game.title); // Debug
-            const emuBadge = document.createElement('div');
-            emuBadge.className = 'emu-badge';
-            emuBadge.textContent = 'EMU';
-            gameCard.appendChild(emuBadge);
-        }
-
-        // Add warning badge if game was beaten with assistance
-        if (game.assisted === true || game.assisted === 'true') {
-            console.log('Adding warning badge for:', game.title); // Debug
-            const warningBadge = document.createElement('div');
-            warningBadge.className = 'warning-badge';
-            warningBadge.textContent = 'CHEAT';
-            gameCard.appendChild(warningBadge);
-        }
-
-        // Add co-op badge if game was played in co-op
-        if (game.notes && game.notes.includes('Co-op')) {
-            console.log('Adding co-op badge for:', game.title); // Debug
-            const coopBadge = document.createElement('div');
-            coopBadge.className = 'coop-badge';
-            gameCard.appendChild(coopBadge);
-        }
