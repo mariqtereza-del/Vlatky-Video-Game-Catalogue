@@ -6249,7 +6249,7 @@ const games = [
         notes: '' // Optional
     },
     {		
-        image: 'images/Video game covers/guitarheroiips2.jpg',
+        image: 'images/Video game covers/guitarheroiips2.jpg', //fixed
         title: 'Guitar Hero II',
         date: '7.11.2006', // Format: Month.Year (e.g., '12.2023')
         console: 'PlayStation 2', // Must match one in categories
