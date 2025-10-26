@@ -2223,7 +2223,6 @@ const games = [
         readTVTropes: null, // true or false
         playedDLC: 'na', // 'true', 'false', or 'na'
         rating: '4/5', // Your rating format
-
         notes: 'Used save states and walkthrough' // Optional
     },		
 	{
