@@ -12310,6 +12310,7 @@ function initializeApp() {
     setupCategorySelect();
     setupPopupHandlers();
     setupScrollPersistence();
+    setupSearch();
     
     
     // Set initial state - hide all categories (default is "All Games")
